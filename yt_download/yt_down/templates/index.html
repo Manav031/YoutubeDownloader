@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Downloader</title>
+    <link rel="stylesheet" href="{% static './style.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1><a href="#"><span>Y</span>outube<span>D</span>ownloader</a></h1>
+        <ul>
+            <li><a href="#"><span>H</span>ome</a></li>
+        </ul>
+    </header>
+    <section class="main">
+        <form action="download" method="GET">
+            <input type="text" placeholder="Enter URL..." name="url">
+            <div class="btncenter">
+                <button id="btn-get">Get</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

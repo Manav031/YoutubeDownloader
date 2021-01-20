@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static './download.css' %}">
+</head>
+<body>
+    <header>
+        <h1><a href="#"><span>Y</span>outube<span>D</span>ownloader</a></h1>
+        <ul>
+            <li><a href="#"><span>H</span>ome</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        {% for i in res %}
+        <div class="card">
+            <div class="content">
+                <h1>{{i}}</h1>
+                <h2>{{i}}</h2>
+                <form action="{% url 'download_cmpt' i %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" name="dvn">Download</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
